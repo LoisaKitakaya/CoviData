@@ -2,6 +2,7 @@ from django.shortcuts import render
 import requests
 from datetime import datetime
 from django.views.decorators.cache import cache_page
+import os
 
 # Create your views here.
 
@@ -13,7 +14,7 @@ def home(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -36,7 +37,7 @@ def asia(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -59,7 +60,7 @@ def africa(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -82,7 +83,7 @@ def europe(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -105,7 +106,7 @@ def north_america(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -128,7 +129,7 @@ def south_america(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -151,7 +152,7 @@ def australia_ocenia(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -174,7 +175,7 @@ def covid_news(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -197,7 +198,7 @@ def health_news(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
@@ -220,7 +221,7 @@ def vaccine_news(request):
 
     headers = {
         'x-rapidapi-host': "vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com",
-        'x-rapidapi-key': "53261179d3msh4f625af6c821a4cp17aaa5jsn475301ddb7c1"
+        'x-rapidapi-key': os.getenv('x-rapidapi-key')
         }
 
     response = requests.request("GET", url, headers=headers).json()
