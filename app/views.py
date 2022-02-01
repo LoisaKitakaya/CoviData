@@ -1,8 +1,11 @@
 from django.shortcuts import render
 import requests
 from datetime import datetime
+from django.views.decorators.cache import cache_page
 
 # Create your views here.
+
+@cache_page(600)
 def home(request):
 
     # get world data
@@ -25,6 +28,7 @@ def home(request):
 
     return render(request, 'app/index.html', context)
 
+@cache_page(600)
 def asia(request):
 
     # get asia data
@@ -47,6 +51,7 @@ def asia(request):
 
     return render(request, 'app/asia.html', context)
 
+@cache_page(600)
 def africa(request):
 
     # get africa data
@@ -69,6 +74,7 @@ def africa(request):
 
     return render(request, 'app/africa.html', context)
 
+@cache_page(600)
 def europe(request):
 
     # get europe data
@@ -91,6 +97,7 @@ def europe(request):
 
     return render(request, 'app/europe.html', context)
 
+@cache_page(600)
 def north_america(request):
 
     # get north america data
@@ -113,6 +120,7 @@ def north_america(request):
 
     return render(request, 'app/namerica.html', context)
 
+@cache_page(600)
 def south_america(request):
 
     # south america data
@@ -135,6 +143,7 @@ def south_america(request):
 
     return render(request, 'app/samerica.html', context)
 
+@cache_page(600)
 def australia_ocenia(request):
 
     # get australia and ocenia data
@@ -157,10 +166,7 @@ def australia_ocenia(request):
 
     return render(request, 'app/austocenia.html', context)
 
-def about(request):
-
-    return render(request, 'app/about.html')
-
+@cache_page(600)
 def covid_news(request):
 
     # get covid news
@@ -183,6 +189,7 @@ def covid_news(request):
 
     return render(request, 'app/news.html', context)
 
+@cache_page(600)
 def health_news(request):
 
     # get health news
@@ -205,6 +212,7 @@ def health_news(request):
 
     return render(request, 'app/news.html', context)
 
+@cache_page(600)
 def vaccine_news(request):
 
     # get vaccine news
@@ -226,3 +234,7 @@ def vaccine_news(request):
     }
 
     return render(request, 'app/news.html', context)
+
+def about(request):
+
+    return render(request, 'app/about.html')
