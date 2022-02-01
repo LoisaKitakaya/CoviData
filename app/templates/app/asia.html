@@ -1,0 +1,191 @@
+<!-- inherit base template -->
+{% extends "base.html" %}
+<!-- inherit base template -->
+
+<!-- load static -->
+{% load static %}
+<!-- load static -->
+
+<!-- load humanize -->
+{% load humanize %}
+<!-- load humanize -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<!-- **** -->
+
+<!-- nav tabs -->
+<!-- *** **** -->
+<div class="nav-tabs" id="navigation">
+  <ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}">World Data</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'asia' %}"
+        >Asia</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'africa' %}">Africa</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'europe' %}">Europe</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'north_america' %}">N. America</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'south_america' %}">S. America</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'australia_ocenia' %}"
+        >Australia/Ocenia</a
+      >
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-expanded="false"
+        >More</a
+      >
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="{% url 'covid_news' %}"
+            >Covid-19 News</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="{% url 'health_news' %}"
+            >Health News</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="{% url 'vaccine_news' %}"
+            >Vaccine News</a
+          >
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="{% url 'about' %}">About</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- *** **** -->
+<!-- nav tabs -->
+
+<!-- logo -->
+<!-- **** -->
+<div class="logo">
+  <img src="{% static 'img/covidata.png' %}" alt="site logo" />
+</div>
+<!-- **** -->
+<!-- logo -->
+
+<!-- intro -->
+<!-- ***** -->
+<div class="intro">
+  <br />
+  <h1>Welcome to <span class="highlight">CoviData</span>!</h1>
+  <br />
+  <h3>view <span class="highlight">Covid-19</span> statistics and more.</h3>
+  <br />
+  <h2>Find data from all over the <span class="highlight">Globe</span>.</h2>
+  <br />
+</div>
+<!-- ***** -->
+<!-- intro -->
+
+<hr class="divider" />
+
+<!-- tables -->
+<!-- ****** -->
+<div class="container table-container">
+  <!--  -->
+  <table class="data-table">
+    <h3 class="text-center text-decoration-underline">World data</h3>
+    <br />
+    <tr class="table-header">
+      <th class="col">Country</th>
+      <th class="col">Total Cases</th>
+      <th class="col">New Cases</th>
+      <th class="col">Total Deaths</th>
+      <th class="col">New Deaths</th>
+      <th class="col">Total Recovered</th>
+      <th class="col">New Recovered</th>
+      <th class="col">Active Cases</th>
+      <th class="col">Serious/Critical</th>
+      <th class="col">Total Tests</th>
+    </tr>
+    <!-- if -->
+    {% if asia_data %}
+    <!-- if -->
+    <!-- for -->
+    {% for data in asia_data %}
+    <!-- for -->
+    <tr class="table-header">
+      <td class="col">{{ data.Country|intcomma }}</td>
+      <td class="col">{{ data.TotalCases|intcomma }}</td>
+      <td class="col">{{ data.NewCases|intcomma }}</td>
+      <td class="col">{{ data.TotalDeaths|intcomma }}</td>
+      <td class="col">{{ data.NewDeaths|intcomma }}</td>
+      <td class="col">{{ data.TotalRecovered|intcomma }}</td>
+      <td class="col">{{ data.NewRecovered|intcomma }}</td>
+      <td class="col">{{ data.ActiveCases|intcomma }}</td>
+      <td class="col">{{ data.Serious_Critical|intcomma }}</td>
+      <td class="col">{{ data.TotalTests|intcomma }}</td>
+    </tr>
+    <!-- endfor -->
+    {% endfor %}
+    <!-- endfor -->
+    <!-- if -->
+    {% endif %}
+    <!-- if -->
+  </table>
+  <!--  -->
+  <br />
+  <!--  -->
+  <p class="text-muted text-center">
+    powered by:
+    <a
+      href="https://rapidapi.com/vaccovidlive-vaccovidlive-default/api/vaccovid-coronavirus-vaccine-and-treatment-tracker/details"
+      >VACCOVID.LIVE</a
+    >
+  </p>
+  <!--  -->
+</div>
+<!-- ****** -->
+<!-- tables -->
+
+<hr class="divider" />
+
+<!--  -->
+<p class="text-center">Last updated: {{ last_updated }}</p>
+<!--  -->
+
+<hr class="divider" />
+
+<!-- footer -->
+<!-- ****** -->
+<div class="footer container-fluid">
+  <p>
+    Copyright &#169; 2022
+    <a href="https://github.com/LoisaKitakaya"> Freedom Loisa</a>. All rights
+    reserved.
+  </p>
+</div>
+<!-- ****** -->
+<!-- footer -->
+
+<!-- **** -->
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->

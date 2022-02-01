@@ -1,0 +1,151 @@
+<!-- inherit base template -->
+{% extends "base.html" %}
+<!-- inherit base template -->
+
+<!-- load static -->
+{% load static %}
+<!-- load static -->
+
+<!-- app body begin -->
+{% block content %}
+<!-- app body begin -->
+
+<!-- body -->
+<!-- **** -->
+
+<!-- nav tabs -->
+<!-- *** **** -->
+<div class="nav-tabs" id="navigation">
+  <ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'home' %}">World Data</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'asia' %}">Asia</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'africa' %}">Africa</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'europe' %}">Europe</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'north_america' %}">N. America</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'south_america' %}">S. America</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'australia_ocenia' %}"
+        >Australia/Ocenia</a
+      >
+    </li>
+    <li class="nav-item dropdown">
+      <a
+        class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-expanded="false"
+        >More</a
+      >
+      <ul class="dropdown-menu">
+        <li>
+          <a class="dropdown-item" href="{% url 'covid_news' %}"
+            >Covid-19 News</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="{% url 'health_news' %}"
+            >Health News</a
+          >
+        </li>
+        <li>
+          <a class="dropdown-item" href="{% url 'vaccine_news' %}"
+            >Vaccine News</a
+          >
+        </li>
+        <li><hr class="dropdown-divider" /></li>
+        <li><a class="dropdown-item" href="{% url 'about' %}">About</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- *** **** -->
+<!-- nav tabs -->
+
+<!-- logo -->
+<!-- **** -->
+<div class="logo">
+  <img src="{% static 'img/covidata.png' %}" alt="site logo" />
+</div>
+<!-- **** -->
+<!-- logo -->
+
+<!-- intro -->
+<!-- ***** -->
+<div class="intro">
+  <br />
+  <h1>Welcome to <span class="highlight">CoviData</span>!</h1>
+  <br />
+  <h3>view <span class="highlight">Covid-19</span> statistics and more.</h3>
+  <br />
+  <h2>Find data from all over the <span class="highlight">Globe</span>.</h2>
+  <br />
+</div>
+<!-- ***** -->
+<!-- intro -->
+
+<hr class="divider" />
+
+<!-- about -->
+<!-- ***** -->
+<div class="container about-container">
+  <!--  -->
+  <h3 class="text-center text-decoration-underline">About</h3>
+  <!--  -->
+  <br />
+  <p class="about-text">
+    <strong>CoviData</strong> is a web application that shows the user
+    <strong>Covid-19</strong> statistics; filtering the data into the following
+    categories: <br />
+    World (general world statistics). <br />
+    Continent (every country's data within it's parent continent).
+    <br />
+    <strong>CoviData</strong> is however not limited to only showing
+    <strong>Covid-19</strong>
+    statistics. One can also find news on the virus and/or related topics.
+  </p>
+  <br />
+  <p class="text-muted text-center">
+    <strong>CoviData</strong> is powered by:
+    <a
+      href="https://rapidapi.com/vaccovidlive-vaccovidlive-default/api/vaccovid-coronavirus-vaccine-and-treatment-tracker/details"
+      >VACCOVID.LIVE</a
+    >
+  </p>
+  <!--  -->
+</div>
+<!-- ***** -->
+<!-- about -->
+
+<hr class="divider" />
+
+<!-- footer -->
+<!-- ****** -->
+<div class="footer container-fluid">
+  <p>
+    Copyright &#169; 2022
+    <a href="https://github.com/LoisaKitakaya"> Freedom Loisa</a>. All rights
+    reserved.
+  </p>
+</div>
+<!-- ****** -->
+<!-- footer -->
+
+<!-- **** -->
+<!-- body -->
+
+<!-- app body end -->
+{% endblock %}
+<!-- app body end -->
