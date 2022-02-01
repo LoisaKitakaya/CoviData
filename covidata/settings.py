@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mml-kn$bfl#+k%3nka0(i5dko*!c1@s6zg#h%bf$ktq0-!%&$2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'appcovidata.herokuapp.com']
 
 
 # Application definition
