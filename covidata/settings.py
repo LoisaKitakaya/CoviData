@@ -89,10 +89,10 @@ CACHES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'covidatadb',
-        'USER': 'postgres',
-        'PASSWORD': '#Kitloisa15',
-        'HOST': 'localhost',
+        'NAME': 'daa2rjcsghm8hd',
+        'USER': 'qpzafxopaiqsxt',
+        'PASSWORD': 'f957c503b4d3a4ffd05db1afb041c6013197ce5eb1c90168d8d30643abec98d9',
+        'HOST': 'ec2-34-194-171-47.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
