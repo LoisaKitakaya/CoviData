@@ -4,9 +4,6 @@ $(document).ready(function () {
 
   // scroll
   $(window).scroll(function () {
-    let scroll = $(document).scrollTop();
-    console.log(scroll);
-    //
     if ($(document).scrollTop() > 90) {
       $("#navigation").fadeIn(300);
     } else {
